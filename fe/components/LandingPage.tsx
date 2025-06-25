@@ -4,7 +4,7 @@ import { User, Mail, Lock, Sun, Moon, CheckCircle, ArrowRight, Zap, Shield, Cloc
 export default function LandingPage() {
   const [showSignIn, setShowSignIn] = useState(false);
   const [isDark, setIsDark] = useState(false);
-  const api = "http://localhost:3000"
+  const api = "https://pg-todox.onrender.com"
 
 
   const SignInModal = () => {
