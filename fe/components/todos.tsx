@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Plus, Check, X, User, LogOut } from 'lucide-react';
+import { Check, LogOut, Plus, User, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
-const api = "http://localhost:3000"
+const api = "https://pg-todox.onrender.com"
 
 type Todo = {
     id: string;

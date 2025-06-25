@@ -15,7 +15,6 @@ interface AuthenticatedRequest extends Request {
 
 
 const app = express();
-const port = 3000;
 app.use(cors());
 app.use(express.json());
 
@@ -131,6 +130,7 @@ app.patch('/api/v1/todos/:id', middleware, async (req: any, res: any) => {
 
 
 
-app.listen(port, ()=> {
-    console.log('Server started on port' + port);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
