@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import LandingPage from '../components/LandingPage';
-import Todos from '../components/Todos';
+import Todos from '../components/todos';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
