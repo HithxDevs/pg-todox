@@ -32,24 +32,24 @@ export default function LandingPage() {
       
     };
 
-    const handleSignIn = async (formData: FormData) => {
-      const response = await fetch(api+'/api/v1/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if(data.message === 'Login successful') {
-        localStorage.setItem('token', data.token);
-        alert('Login successful');
-        window.location.href = '/todos';
-      }else{
-        alert('Invalid username or password');
-      }
-      console.log('Data:', data);
-    };
+ const handleSignIn = async (formData: FormData) => {
+  const response = await fetch(api+'/api/v1/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+  const data = await response.json();
+  if(data.message === 'Login successful') {
+    localStorage.setItem('token', data.token);
+    alert('Login successful');
+    // Instead of window.location.href = '/todos';
+    window.location.reload(); // This will reload and you can check token in useEffect
+  } else {
+    alert('Invalid username or password');
+  }
+};
 
 
     const handleSubmit = () => {
